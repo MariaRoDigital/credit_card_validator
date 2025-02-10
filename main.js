@@ -129,3 +129,19 @@ const idInvalidCardCompanies = arr => {
 idInvalidCardCompanies(invalidCards);
 
 // extra challenge: tested using card numbers from a card number generator and validator site
+
+// extra challenge: to make it easier to test credit card numbers, create a function that accepts a string and converts it into an array of numbers like the initially provided arrays.
+const string = '123456789'
+
+const stringToArray = str => {
+  let convertedString = [];
+
+  for (let i = 1; i < string.length; ++i) {
+    convertedString.push(parseInt(i, 10));
+  }
+  return convertedString;
+}
+
+console.log(stringToArray(string));
+
+
