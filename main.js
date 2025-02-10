@@ -108,16 +108,16 @@ const idInvalidCardCompanies = arr => {
   let companies = [];
 
   for (let batchIndex of arr) {
-    if (batchIndex.includes(3)) {
+    if (batchIndex[0] === 3) {
       companies.push('Amex');
-    } else if (batchIndex.includes(4)) {
+    } else if (batchIndex[0] === 4) {
       companies.push('Visa');
-    } else if (batchIndex.includes(5)) {
+    } else if (batchIndex[0] === 5) {
       companies.push('Mastercard');
-    } else if (batchIndex.includes(6)) {
+    } else if (batchIndex[0] === 6) {
       companies.push('Discover');
     } else {
-      return 'Company not found';
+      console.log('Company not found');
     }
   }
 
@@ -127,3 +127,5 @@ const idInvalidCardCompanies = arr => {
 }
 
 idInvalidCardCompanies(invalidCards);
+
+// extra challenge: tested using card numbers from a card number generator and validator site
