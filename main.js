@@ -64,11 +64,10 @@ const validateCred = (arr) => {
       results.push(false);
     }
   }
-  return results;
+  console.log(results);
 }
 
-const invalidOrValid = validateCred(batch);
-console.log(invalidOrValid);
+// validateCred(batch);
 
 
 // ** FIND INVALID CARDS
@@ -102,8 +101,7 @@ const findInvalidCards = arr => {
 }
 
 const invalidCards = findInvalidCards(batch);
-// console.log(invalidCards)
-
+// console.log(invalidCards);
 
 // IDENTIFY INVALID CARD ISSUING COMPANIES
 const idInvalidCardCompanies = arr => {
