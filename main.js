@@ -40,17 +40,17 @@ const validateCred = (arr) => {
 
   // reverses the array without mutating original array and then iterates through each array in the batch and adds it to a new array
   for (let batchIndex of arr) {
-    let reversedArr = batchIndex.toReversed();
+    let revArr = batchIndex.toReversed();
     let digitCheckResult = [];
 
     // iterates through the digits in the each individual array inside of batch, leaves every other number alone but does add it to the array called digitCheckResult, doubles any number that isn't more than 9 when doubled and adds it to digitCheckResult, or when the number is more than 9 when doubled, it multiplies the digit by 2 and then subtracts 9 from the result, then adds it to digitCheckResult.
-    for (let checkDigit = 0; checkDigit < reversedArr.length; ++checkDigit) {
+    for (let checkDigit = 0; checkDigit < revArr.length; ++checkDigit) {
       if (checkDigit === 0 || checkDigit % 2 === 0) {
-        digitCheckResult.push(reversedArr[checkDigit]);
-      } else if (reversedArr[checkDigit] * 2 > 9) {
-        digitCheckResult.push(reversedArr[checkDigit] * 2 - 9);
+        digitCheckResult.push(revArr[checkDigit]);
+      } else if (revArr[checkDigit] * 2 > 9) {
+        digitCheckResult.push(revArr[checkDigit] * 2 - 9);
       } else {
-        digitCheckResult.push(reversedArr[checkDigit] * 2)
+        digitCheckResult.push(revArr[checkDigit] * 2)
       };
     }
 
@@ -75,17 +75,17 @@ const findInvalidCards = arr => {
   let invalidCards = [];
 
   for (let batchIndex of arr) {
-    let reversedArr = batchIndex.toReversed();
+    let revArr = batchIndex.toReversed();
     let digitCheckResult = [];
 
     // iterates through the digits in the each individual array inside of batch, leaves every other number alone but does add it to the array called digitCheckResult, doubles any number that isn't more than 9 when doubled and adds it to digitCheckResult, or when the number is more than 9 when doubled, it multiplies the digit by 2 and then subtracts 9 from the result, then adds it to digitCheckResult.
-    for (let checkDigit = 0; checkDigit < reversedArr.length; ++checkDigit) {
+    for (let checkDigit = 0; checkDigit < revArr.length; ++checkDigit) {
       if (checkDigit === 0 || checkDigit % 2 === 0) {
-        digitCheckResult.push(reversedArr[checkDigit]);
-      } else if (reversedArr[checkDigit] * 2 > 9) {
-        digitCheckResult.push(reversedArr[checkDigit] * 2 - 9);
+        digitCheckResult.push(revArr[checkDigit]);
+      } else if (revArr[checkDigit] * 2 > 9) {
+        digitCheckResult.push(revArr[checkDigit] * 2 - 9);
       } else {
-        digitCheckResult.push(reversedArr[checkDigit] * 2)
+        digitCheckResult.push(revArr[checkDigit] * 2)
       };
     }
 
