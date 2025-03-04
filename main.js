@@ -149,7 +149,6 @@ const stringToArray = str => {
 // extra challenge: create a function that will convert invalid numbers into valid numbers
 const invalidToValid = arr => {
   let newValidCards = [];
-  let numSum;
 
   for (let index of arr) {
     let revArr = index.toReversed();
@@ -169,7 +168,7 @@ const invalidToValid = arr => {
     // creates a variable with the sum of the digit results
     let digitsSum = digitCheckResult.reduce((acc, currentValue) => acc + currentValue);
 
-    // looks at the sum of digitsSum divided by 10, looks at the remainder and then uses the remainder result to check the number (51, 52, 53 and so on) to change one of the digits into a value that will give the sum a valid number
+    // looks at the sum of digitsSum divided by 10, looks at the remainder and then uses the remainder result to check the number (51, 52, 53 and so on) to change one of the digits into a value that will give the sum a valid number depending if the number is available to change
 
     // replace sum when sum has a remainder of 1
     if (digitsSum % 10 === 1) {
