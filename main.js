@@ -208,10 +208,8 @@ const invalidToValid = arr => {
 
       // replace sum when sum has a remainder of 5
     } else if (digitsSum % 10 === 5) {
-      if (revArr.indexOf(7) && revArr.indexOf(7) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(7), 1, 0)
-      } else if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(1), 1, 2)
+      if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(2), 1, 7)
       }
 
       // replace sum when sum has a remainder of 6
