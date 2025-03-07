@@ -106,9 +106,6 @@ const findInvalidCards = arr => {
   return invalidCards;
 }
 
-const invalidCards = findInvalidCards(batch);
-console.log(invalidCards);
-
 // IDENTIFY INVALID CARD ISSUING COMPANIES
 const idInvalidCardCompanies = arr => {
   let companies = [];
@@ -178,50 +175,68 @@ const invalidToValid = arr => {
     // replace sum when sum has a remainder of 1
     if (digitsSum % 10 === 1) {
       if (revArr.indexOf(5) && revArr.indexOf(5) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(5), 1, 0)
+        revArr.splice(revArr.indexOf(5), 1, 0) // subtracts 1
+      } else if (revArr.indexOf(0) && revArr.indexOf(0) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(0), 1, 9) // adds 9
       } else {
-        revArr.splice(revArr.indexOf(1), 1, 4)
+        revArr.splice(revArr.indexOf(1), 1, 4) // makes a 2 into 8
+        revArr.splice(revArr.indexOf(0), 1, 1) // make a 0 into 2
       }
 
       // replace sum when sum has a remainder of 2
     } else if (digitsSum % 10 === 2) {
       if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(1), 1, 0)
+        revArr.splice(revArr.indexOf(1), 1, 0) // make 2 into 0
       } else if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(2), 1, 1)
-        revArr.splice(revArr.indexOf(1), 1, 0)
+        revArr.splice(revArr.indexOf(2), 1, 1) // make 4 into 2
+      } else {
+        revArr.splice(revArr.indexOf(0), 1, 4) // make 0 into 8
       }
 
       // replace sum when sum has a remainder of 3
     } else if (digitsSum % 10 === 3) {
       if (revArr.indexOf(6) && revArr.indexOf(6) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(6), 1, 0)
-      } else if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(2), 1, 1)
-        revArr.splice(revArr.indexOf(1), 1, 5)
+        revArr.splice(revArr.indexOf(6), 1, 0) // subtract 0
+      } else if (revArr.indexOf(3) && revArr.indexOf(3) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(3), 1, 6) // subtract 3
+      } else if (revArr.indexOf(9) && revArr.indexOf(9) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(9), 1, 3) // subtract 3
       }
 
       // replace sum when sum has a remainder of 4
     } else if (digitsSum % 10 === 4) {
-      if (revArr.indexOf(6) && revArr.indexOf(6) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(6), 1, 0)
-      } else if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(2), 1, 1)
-        revArr.splice(revArr.indexOf(1), 1, 5)
+      if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(2), 1, 0)
+      } else if (revArr.indexOf(8) && revArr.indexOf(8) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(8), 1, 6)
+      } else if (revArr.indexOf(4) && revArr.indexOf(4) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(4), 1, 2)
+      } else if (revArr.indexOf(9) && revArr.indexOf(9) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(9), 1, 7)
+      } else if (revArr.indexOf(7) && revArr.indexOf(7) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(7), 1, 5)
       }
 
       // replace sum when sum has a remainder of 5
     } else if (digitsSum % 10 === 5) {
       if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
         revArr.splice(revArr.indexOf(2), 1, 7)
+      } else if (revArr.indexOf(7) && revArr.indexOf(7) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(7), 1, 2)
+      } else if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(1), 1, 6)
+      } else if (revArr.indexOf(9) && revArr.indexOf(9) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(9), 1, 4)
       }
 
       // replace sum when sum has a remainder of 6
     } else if (digitsSum % 10 === 6) {
-      if (revArr.indexOf(3) && revArr.indexOf(3) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(3), 1, 0)
-      } else if (revArr.indexOf(7) && revArr.indexOf(7) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(7), 1, 9)
+      if (revArr.indexOf(0) && revArr.indexOf(0) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(0), 1, 2)
+      } else if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(5), 1, 7)
+      } else if (revArr.indexOf(6) && revArr.indexOf(6) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(6), 1, 8)
       }
 
       // replace sum when sum has a remainder of 7
@@ -230,20 +245,26 @@ const invalidToValid = arr => {
         revArr.splice(revArr.indexOf(0), 1, 6)
       } else if (revArr.indexOf(5) && revArr.indexOf(5) !== revArr[0]) {
         revArr.splice(revArr.indexOf(5), 1, 2)
+      } else if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(2), 1, 8)
       }
 
       // replace sum when sum has a remainder of 8
     } else if (digitsSum % 10 === 8) {
-      if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(1), 1, 2)
-      } else if (revArr.indexOf(4) && revArr.indexOf(4) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(4), 1, 0)
+      if (revArr.indexOf(4) && revArr.indexOf(4) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(4), 1, 3) // changes a 0 into a 2
+      } else if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(1), 1, 2) // changes a 2 into a 4
+      } else if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(2), 1, 3) // changes a 4 into a 6
+      } else if (revArr.indexOf(6) && revArr.indexOf(6) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(6), 1, 7)
       }
 
       // replace sum when sum has a remainder of 9
     } else if (digitsSum % 10 === 9) {
       if (revArr.indexOf(0) && revArr.indexOf(0) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(0), 1, 5)
+        revArr.splice(revArr.indexOf(0), 1, 9)
       } else if (revArr.indexOf(9) && revArr.indexOf(9) !== revArr[0]) {
         revArr.splice(revArr.indexOf(9), 1, 0)
       }
@@ -253,5 +274,8 @@ const invalidToValid = arr => {
   return newValidCards
 }
 
-console.log(findInvalidCards(invalidToValid(invalidCards)))
+const invalidCards = findInvalidCards(batch);
+// console.log(invalidCards);
+console.log(invalidToValid(invalidCards));
+console.log(findInvalidCards(invalidToValid(batch)));
 ```
