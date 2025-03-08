@@ -206,21 +206,17 @@ const invalidToValid = arr => {
       // replace sum when sum has a remainder of 4
     } else if (digitsSum % 10 === 4) {
       if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(2), 1, 0)
-      } else if (revArr.indexOf(8) && revArr.indexOf(8) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(8), 1, 6)
+        revArr.splice(revArr.indexOf(2), 1, 0) // changes 2 to 8
       } else if (revArr.indexOf(4) && revArr.indexOf(4) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(4), 1, 2)
-      } else if (revArr.indexOf(9) && revArr.indexOf(9) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(9), 1, 7)
-      } else if (revArr.indexOf(7) && revArr.indexOf(7) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(7), 1, 5)
-      }
+        revArr.splice(revArr.indexOf(4), 1, 2) // changes 5 to 1
+      } else if (revArr.indexOf(3) && revArr.indexOf(3) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(3), 1, 1) // changes 8 to 4
+      } 
 
       // replace sum when sum has a remainder of 5
     } else if (digitsSum % 10 === 5) {
       if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(2), 1, 7)
+        revArr.splice(revArr.indexOf(2), 1, 7) //
       } else if (revArr.indexOf(7) && revArr.indexOf(7) !== revArr[0]) {
         revArr.splice(revArr.indexOf(7), 1, 2)
       } else if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
@@ -231,18 +227,16 @@ const invalidToValid = arr => {
 
       // replace sum when sum has a remainder of 6
     } else if (digitsSum % 10 === 6) {
-      if (revArr.indexOf(0) && revArr.indexOf(0) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(0), 1, 2)
-      } else if (revArr.indexOf(1) && revArr.indexOf(1) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(5), 1, 7)
+      if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
+        revArr.splice(revArr.indexOf(2), 1, 6)
       } else if (revArr.indexOf(6) && revArr.indexOf(6) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(6), 1, 8)
+        revArr.splice(revArr.indexOf(6), 1, 0)
       }
 
       // replace sum when sum has a remainder of 7
     } else if (digitsSum % 10 === 7) {
       if (revArr.indexOf(0) && revArr.indexOf(0) !== revArr[0]) {
-        revArr.splice(revArr.indexOf(0), 1, 6)
+        revArr.splice(revArr.indexOf(6), 1, 6)
       } else if (revArr.indexOf(5) && revArr.indexOf(5) !== revArr[0]) {
         revArr.splice(revArr.indexOf(5), 1, 2)
       } else if (revArr.indexOf(2) && revArr.indexOf(2) !== revArr[0]) {
